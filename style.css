@@ -1,0 +1,115 @@
+/* dont quit */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.quit h1 {
+  transition: 0.5s;
+  font-size: 4em;
+  padding: 0;
+  margin: 0;
+  line-height: 1em;
+  letter-spacing: 0.2em;
+}
+
+.quit h1 span {
+  display: block;
+  position: relative;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.quit h1 .s1::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: calc(50% - 10px);
+  width: 50%;
+  height: 20px;
+  background: #f00;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.quit h1 .s2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(50% - 10px);
+  width: 50%;
+  height: 20px;
+  background: #f00;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: 0.5s;
+  z-index: 1;
+}
+
+h1:hover .s1::before {
+  transform: scaleX(1);
+}
+
+h1:hover .s2::before {
+  transform: scaleX(1);
+}
+
+h1 span .hide {
+  transition: 0.5s;
+  transition-delay: 0.6s;
+}
+
+h1:hover span .hide {
+  transition-delay: 0.6s;
+  color: #f00;
+  opacity: 0;
+}
+
+h1:hover .s1 .hide {
+  padding-left: 25px;
+}
+
+h1:hover .s2 .hide {
+  padding-left: 35px;
+}
+
+.btn-group {
+  margin-top: 100px;
+  transform: scaleX(50%);
+}
+
+.btn {
+  display: inline-block;
+  width: 20rem;
+  background: #f00;
+  border: 2px solid #f00;
+  color: #fff;
+  padding: 15px 35px;
+  text-decoration: none;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 40px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  color: #f00;
+  background: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+  .btn-group {
+    /* position: absolute; */
+    bottom: 10%;
+    left: 33%;
+    transform: scaleX(50%);
+  }
+}
